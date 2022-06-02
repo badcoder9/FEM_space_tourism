@@ -1,0 +1,165 @@
+@use 'variables' as var;
+@use 'mixin' as mix;
+
+.crewC{
+    .container{
+        @include mix.flexC;
+        justify-content: space-between;
+        padding: 2rem 0 0 0;
+    }
+    .section-title{
+        color: var.$light;
+        font-family: var.$sansCond;
+        font-size: 1.75rem;
+        font-weight: 500;
+        letter-spacing: 4.75px;
+        &__number{
+            font-weight: bold !important;
+            margin-right: 1rem;
+        }
+    }
+    
+    &__bottom{
+        @include mix.flex;
+        justify-content: space-between;   
+        &-left{
+            @include mix.flex;
+            flex-direction: column-reverse;
+            margin-top: 10rem;
+            max-width: 56%;
+        }
+    }
+    picture:not(.active),
+    &__panel:not(.active-panel){
+        display: none;
+    }
+    picture{
+        align-self: flex-end;
+        width: 50%;
+        img{
+            margin-left: auto;
+        }
+    }
+    &__panel{
+        &__title{
+            @include mix.flexC;
+            font-family: var.$serif;
+            font-size: 3.5rem;
+            color: var.$light;
+            font-weight: 500;
+            line-height: 1.7;
+            &-condense{
+                font-size: 2rem;
+            }
+        }
+        &__text{
+            font-size: 18px;
+            color: var.$accent;
+            padding: 1rem 0 0 0;
+            font-family: var.$sansNormal;
+            line-height: 1.7;
+        }
+    }
+    &__tablist{
+        margin: 7.5rem 0 5rem 0;
+    }
+    &_tab{
+        width: 1rem;
+        height: 1rem;
+        color: var.$dark;
+        background-color: var.$light;
+        position: relative;
+        cursor: pointer;
+        border: 2px solid var.$light;
+        border-radius: 50%;
+        &:not(:last-child){
+            margin-right: 1.5rem;
+        }
+        &.active-tab{
+            color: var.$light;
+            background-color: var.$dark;
+        }
+    }
+}
+@include mix.tablet{
+    .crewC{
+        .container{
+            padding: 2rem 3rem 0 3rem;
+        }
+        .section-title{
+            font-size: 1.25rem;
+            letter-spacing: 3.38px;
+        }
+        picture, img{
+            max-width: 100%;
+            margin: auto;
+        }
+        &__bottom{
+            @include mix.flexC;
+            align-items: center;
+            &-left{
+                text-align: center;
+                align-items: center;
+                margin-top: 5rem;
+            }
+        }
+        &__panel{
+            &__title{
+                font-size: 2.5rem;
+                &-condense{
+                    font-size: 1.5rem;
+                }
+            }
+            &__text{
+                max-width: 55ch;
+                font-size: 1rem;
+            }
+        }
+        &__tablist{
+            margin: 3rem 0;
+        }
+    }
+}
+@include mix.mobile{
+    .crewC{
+        .container{
+            padding: 2rem 1.5rem 3rem 1.5rem;
+        }
+        .section-title{
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: 2.7px;
+        }
+        img{
+            max-width: 100%;
+        }
+        picture{
+            margin-top: 2rem;
+            border-bottom: 1px solid var.$accent;
+        }
+        &__bottom{
+            @include mix.flex;
+            flex-direction: column-reverse;
+            gap: 0;
+            &-left{
+                margin-top: 0;
+                flex-direction: column;
+                max-width: 100%;
+            }
+        }
+        &__panel{
+            &__title{
+                font-size: 1.5rem;
+                &-condense{
+                    font-size: 1rem;
+                }
+            }
+            &__text{
+                font-size: .935rem;
+            }
+        }
+        &__tablist{
+            margin: 2rem 0;
+        }
+    }
+}

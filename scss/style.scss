@@ -1,0 +1,112 @@
+@use 'variables' as var;
+@use 'colors' as clrs;
+@use 'mixin' as mix;
+@use 'ge';
+@use 'homepage';
+@use 'destination';
+@use 'crew';
+@use 'technology';
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*:focus, [tabindex]:focus{
+    outline: 2px dashed orangered;
+}
+.tab,
+.home__right-link{
+    outline-offset: 4px;
+}
+body{
+    min-height: 100vh;
+    background-color: var.$dark !important;
+}
+ul{
+    list-style: none;
+}
+img,picture{
+    max-width: 100%;
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+    white-space: nowrap;
+    color: var.$dark;
+    background-color: var.$light;
+}
+.container{
+    width: 100%;
+    max-width: 1100px;
+    padding-block: 2rem;
+    margin: auto;
+}
+h1,h2,h3,h4,.uppercase{
+    text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::after, *::before{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+.homepage, .destination, .crew, .technology{
+    background-position: center center;
+    background-size: cover !important;
+}
+.homepage{
+    background: url(../assets/home/background-home-mobile.jpg) no-repeat;
+}
+.destination{
+    background: url(../assets/destination/background-destination-mobile.jpg) no-repeat;
+}
+.crew{
+    background: url(../assets/crew/background-crew-mobile.jpg) no-repeat;
+}
+.technology{
+    background: url(../assets/technology/background-technology-mobile.jpg) no-repeat;
+}
+@include mix.bg-tablet{
+    .homepage{
+        background: url(../assets/home/background-home-tablet.jpg) no-repeat;
+    }
+    .destination{
+        background: url(../assets/destination/background-destination-tablet.jpg) no-repeat;
+    }
+    .crew{
+        background: url(../assets/crew/background-crew-tablet.jpg) no-repeat;
+    }
+    .technology{
+        background: url(../assets/technology/background-technology-tablet.jpg) no-repeat;
+    }
+}
+@include mix.bg-desktop{
+    .homepage{
+        background: url(../assets/home/background-home-desktop.jpg) no-repeat;
+    }
+    .destination{
+        background: url(../assets/destination/background-destination-desktop.jpg) no-repeat;
+    }
+    .crew{
+        background: url(../assets/crew/background-crew-desktop.jpg) no-repeat;
+    }
+    .technology{
+        background: url(../assets/technology/background-technology-desktop.jpg) no-repeat;
+    }
+}

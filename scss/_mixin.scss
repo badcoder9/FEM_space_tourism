@@ -1,0 +1,42 @@
+@use 'variables' as var;
+@use 'colors' as clrs;
+
+@mixin mobile{
+    @media screen and (max-width: var.$mobile){
+        @content;
+    }
+}
+@mixin bg-desktop{
+    @media screen and (min-width: var.$tablet2){
+        @content;
+    }
+}
+@mixin bg-tablet{
+    @media screen and (min-width: var.$tablet-min) and (max-width: var.$tablet){
+        @content;
+    }
+}
+@mixin desktop{
+    @media screen and (max-width: var.$desktop-min){
+        @content;
+    }
+}
+@mixin tablet{
+    @media screen and (max-width: var.$tablet-max){
+        @content;
+    }
+}
+@mixin flex{
+    display: flex;
+}
+@mixin flexC{
+    display: flex;
+    flex-direction: column;
+}
+@mixin grid{
+    display: grid;
+}
+
+@mixin radius ($val){
+    border-radius: $val;
+}

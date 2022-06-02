@@ -1,0 +1,198 @@
+@use 'variables' as var;
+@use 'mixin' as mix;
+
+.dest{
+    .container{
+        @include mix.flexC;
+        justify-content: space-between;
+        padding: 2rem 0 3rem 0;
+    }
+    .section-title{
+        color: var.$light;
+        font-family: var.$sansCond;
+        font-size: var.$h2-desk;
+        font-weight: 500;
+        letter-spacing: 4.75px;
+        margin-bottom: 3rem;
+        &__number{
+            font-weight: bold !important;
+            margin-right: 1rem;
+        }
+    }
+    .tabpanel{
+        @include mix.flexC;
+        max-width: 450px;
+        width: 100%;
+    }
+    .dest__bottom{
+        @include mix.flex;
+        justify-content: space-between;
+        > picture{
+            display: none;
+            width: 50%;
+            &.active{
+                display: block;
+            }
+        }
+    }
+    &__tablist{
+        @include mix.flex;
+        gap: 1rem;
+    }
+    &_tab{
+        font-family: var.$sansCond;
+        font-size: 1.125rem;
+        padding: .5rem 0;
+        color: var.$accent;
+        background-color: transparent;
+        letter-spacing: 1.7px;
+        position: relative;
+        cursor: pointer;
+        text-transform: uppercase;
+        gap: 2rem;
+        border-bottom: 3px solid transparent;
+        &:hover{
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        &:not(:last-child){
+            margin-right: 1.5rem;
+        }
+        &.active-tab{
+            color: var.$light;
+            border-color: var.$light;
+        }
+    }
+    &__panel{
+        display: none;      
+        &.active-panel{
+            @include mix.flex;
+            justify-content: space-between;
+        }
+
+        &__title{
+            font-size: 6.25rem;
+            font-family: var.$serif;
+            color: var.$light;
+            font-weight: 500;
+            margin-top: 3rem;
+        }
+        &__text{
+            font-size: 18px;
+            color: var.$accent;
+            padding: 2rem 0 3.5rem 0;
+            border-bottom: 1px solid var.$darkgray;
+            line-height: 1.7;
+        }
+    }
+    &__content-bottom{
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 4rem;
+        p{
+            color: var.$accent;
+            font-size: .975rem;
+            letter-spacing: 2.35px;
+            font-family: var.$sansCond;
+            margin-bottom: .8rem;
+        }
+        div{
+            color: var.$light;
+            font-size: 1.7rem;
+            font-family: var.$serif;
+            font-weight: 500;
+        }
+    }
+}
+
+@include mix.tablet{
+    .dest{
+        .container{
+            padding: 2rem 3rem 0 3rem;
+        }
+        .section-title{
+            font-size: 1.25rem;
+            letter-spacing: 3.38px;
+        }
+        .dest__bottom{
+            flex-direction: column;
+            align-items: center;
+            > picture{
+                max-width: 300px;
+                width: 100%;
+                margin-bottom: 5rem;
+            }
+        }
+        .tabpanel{
+            padding: 0;
+        }
+        &__tablist{            
+            justify-content: center;
+            gap: 3rem;
+        }
+        &_tab{
+            font-size: 1rem;
+            &:not(:last-child){
+                margin-right: 0rem;
+            }
+        }
+        &__panel{
+            text-align: center;    
+            &__title{
+                font-size: 5rem;
+                margin-top: 3rem;
+            }
+            &__text{
+                font-size: 1rem;                
+                line-height: 1.7;
+            }
+        }
+        &__content-bottom{
+            justify-content: center;
+        }
+    }
+}
+@include mix.mobile{
+    .dest{
+        .container{
+            padding: 2rem 1rem 1rem 1rem;
+        }
+        .section-title{
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 2.7px;
+            margin-bottom: 3rem;
+            &__number{
+                margin-right: .5rem;
+            }
+        }
+        .dest__bottom{
+            > picture{
+                max-width: 170px;
+                margin-bottom: 4rem;
+            }
+        }
+        &__tablist{            
+            gap: 1.2rem;
+        }
+        &_tab{
+            font-size: .935rem;
+        }
+        &__panel{
+            text-align: center;    
+            &__title{
+                font-size: 3.5rem;
+                // margin-top: 3rem;
+            }
+            &__text{
+                font-size: .935rem;
+            }
+        }
+        &__content-bottom{
+            flex-direction: column;
+            gap: 2rem;
+            p{
+                font-size: .875rem;
+            }
+        }        
+    }
+}

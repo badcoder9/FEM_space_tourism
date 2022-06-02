@@ -1,0 +1,159 @@
+@use 'variables' as var;
+@use 'mixin' as mix;
+
+.header{
+    @include mix.flex;
+    gap: 1rem;
+    align-items: center;
+    height: 100px;
+    margin: 2rem auto;
+    max-width: 1440px;
+    &__logo{
+        margin-left: 3rem;
+    }
+    &__line{
+        height: 1px;
+        background-color: rgba($color: var.$light, $alpha: .2);
+        width: auto;
+        flex-grow: 1;
+        // right: -3rem;
+        position: relative;
+        z-index: 1;
+        margin-left: 3.5rem;
+        margin-right: -2rem;
+    }
+    &__nav{
+        @include mix.flex;
+        align-items: center;
+        background-color: rgba($color: var.$light, $alpha: .1);
+        backdrop-filter: blur(2rem);
+        margin-block: 2rem;
+    }
+    &__nav-list{
+        @include mix.flex;
+        padding: 0 10.5rem 0 3rem;
+        > li{
+            // margin-inline: 1.5rem;
+            border-bottom: .25rem solid transparent;
+            @include mix.flex;
+            align-items: center;
+            &.active{
+                border-bottom: .25rem solid var.$light;
+                &:hover{
+                    border-bottom: .25rem solid var.$light;
+                }
+            }
+            &:hover{
+                border-bottom: .25rem solid rgba($color: var.$light, $alpha: .5);;
+            }
+            &:not(:last-child){
+                margin-right: 3rem;
+            }
+        }
+    }
+    &__menu-open, &__menu-close{
+        @include mix.flex;
+        height: 44px;
+        width: 44px;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        display: none;
+    }
+    &__nav-link{
+        font-family: var.$sansCond;
+        font-size: 1.1rem;
+        color: var.$light;
+        letter-spacing: 2.7px;
+        text-transform: uppercase;
+        padding-block: 2.25rem;
+    }
+    .nav__link-nb{
+        font-weight: bold;
+        margin-right: .5rem;
+    }
+}
+
+@include mix.tablet{
+    .header{
+        justify-content: space-between;
+        margin-block-start: 0;        
+        &__nav{
+            margin-block: 0;
+        }
+        &__nav-list{
+            padding-inline: 2rem;
+            >li{
+                &:not(:last-child){
+                    margin-right: 2rem;
+                }
+            }
+        }
+        &__line,
+        .nav__link-nb{
+            display: none;
+        }
+        &__nav-link{
+            font-size: .935rem;
+        }
+    }
+}
+@include mix.mobile{
+    .header{
+        margin: 0;
+        &__nav{
+            display: none;
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100%;
+            max-width: 70%;
+            width: 100%;
+            align-items: flex-start;
+            transition: transform linear 500ms;
+            transform: translateX(100%);
+            z-index: 99;
+        }
+        &__nav.open{
+            @include mix.flex;           
+            flex-direction: column;            
+            transform: translateX(0);
+        }
+        &__nav-list{
+            flex-direction: column;
+            margin-top: 6rem;
+            > li, > li.active{
+                margin: 0;
+                border-bottom: none;
+                &:hover{
+                    border-bottom: none;
+                }
+            }
+        }
+        &__nav-link, &__nav-list{
+            width: 100%;
+        }
+        &__nav-link{
+            @include mix.flex;
+            padding-block: 1rem;
+        }
+        &__menu-open, &__menu-close{
+            @include mix.flex;
+            align-items: center;
+        }
+        &__menu-open{
+            margin-right: 1rem;
+        }
+        &__menu-close{
+            position: absolute;
+            top: 1.5rem;
+            right: 1rem;
+        }
+        &__logo{
+            margin-left: 1.5rem;
+        }
+        .nav__link-nb{
+            display: block;
+        }
+    }
+}

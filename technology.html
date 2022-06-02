@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Our custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Space tourism website - Technology</title>
+  </head>
+  <body class="technology">
+    <header id="header" class="header">
+      <div class="header__logo">
+        <img src="./assets/shared/logo.svg" alt="Space Turism" />
+      </div>
+      <div class="header__line"></div>
+      <button class="header__menu-open">
+        <img
+          src="./assets/shared/icon-hamburger.svg"
+          alt="Menu navigation"
+          srcset=""
+        />
+      </button>
+      <nav class="header__nav">
+        <button class="header__menu-close">
+          <img src="./assets/shared/icon-close.svg" alt="Close menu navigaton" />
+        </button>
+        <ul class="header__nav-list">
+          <li>
+            <a href="./index.html" class="header__nav-link"
+              ><span class="nav__link-nb" aria-hidden="true">01</span>Home</a
+            >
+          </li>
+          <li>
+            <a href="./destination.html" class="header__nav-link"
+              ><span class="nav__link-nb" aria-hidden="true">02</span>Destination</a
+            >
+          </li>
+          <li>
+            <a href="./crew.html" class="header__nav-link"
+              ><span class="nav__link-nb" aria-hidden="true">03</span>Crew</a
+            >
+          </li>
+          <li  class="active">
+            <a href="./technology.html" class="header__nav-link"
+              ><span class="nav__link-nb" aria-hidden="true">04</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <div id="technology" class="tech">
+        <div class="container">
+
+          <div class="tech__top">
+            <h2 class="section-title">
+              <span class="section-title__number" aria-hidden="true" role="presentation"
+                >04</span>SPACE LAUNCH 101
+            </h2>
+          </div>
+
+          <div class="tech__bottom">
+            <div class="tech__tablist" role="tablist">
+              <button class="tech__tab tab active-tab" role="tab" tabindex="0" aria-controls="launch-panel" aria-selected="true">1</button>
+              <button class="tech__tab tab" role="tab" tabindex="-1" aria-controls="mission-panel" aria-selected="false">2</button>
+              <button class="tech__tab tab" role="tab" tabindex="-1" aria-controls="pilot-panel" aria-selected="false">3</button>
+            </div>
+            <div class="tech__panels">
+              <div class="tech__panel active-panel" role="tabpanel" id="launch-panel">
+                <div class="tech__content">
+                    <span class="tech__panel__pretitle" role="presentation">
+                      THE TERMINOLOGY…
+                    </span>
+                    <h3 class="tech__panel__title">
+                      LAUNCH VEHICLE
+                    </h3>
+                    <p class="tech__panel__text">
+                      A launch vehicle or carrier rocket is a rocket-propelled vehicle used to 
+                      carry a payload from Earth's surface to space, usually to Earth orbit 
+                      or beyond. Our WEB-X carrier rocket is the most powerful in operation. 
+                      Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!
+                    </p>                    
+                </div>
+              </div>
+
+              <div class="tech__panel" role="tabpanel" id="port-panel">
+                <div class="tech__content">
+                    <span class="tech__panel__pretitle" role="presentation">
+                      THE TERMINOLOGY…
+                    </span>
+                    <h3 class="tech__panel__title">
+                      SPACEPORT
+                    </h3>
+                    <p class="tech__panel__text">
+                      A spaceport or cosmodrome is a site for launching (or receiving) 
+                      spacecraft, by analogy to the seaport for ships or airport for 
+                      aircraft. Based in the famous Cape Canaveral, our spaceport is 
+                      ideally situated to take advantage of the Earth’s rotation for 
+                      launch.
+                    </p>                    
+                </div>
+              </div>
+              <div class="tech__panel" role="tabpanel" id="capsule-panel">
+                <div class="tech__content">
+                    <span class="tech__panel__pretitle" role="presentation">
+                      THE TERMINOLOGY…
+                    </span>
+                    <h3 class="tech__panel__title">
+                      SPACE CAPSULE
+                    </h3>
+                    <p class="tech__panel__text">
+                      A space capsule is an often-crewed spacecraft that uses a blunt-body 
+                      reentry capsule to reenter the Earth's atmosphere without wings. Our 
+                      capsule is where you'll spend your time during the flight. It includes 
+                      a space gym, cinema, and plenty of other activities to keep you entertained.
+                    </p>                    
+                </div>
+              </div>
+            </div>
+            <!-- end of tabpanel -->
+
+            <picture class="active">
+              <source media="(max-width: 768px)" srcset="./assets/technology/image-launch-vehicle-landscape.jpg">
+              <img src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="">
+            </picture>
+            <picture>
+              <source media="(max-width: 768px)" srcset="./assets/technology/image-spaceport-landscape.jpg">
+              <img src="./assets/technology/image-spaceport-portrait.jpg" alt="">
+            </picture>
+            <picture>
+              <source media="(max-width: 768px)" srcset="./assets/technology/image-space-capsule-landscape.jpg">
+              <img src="./assets/technology/image-space-capsule-portrait.jpg" alt="">
+            </picture>
+          </div>      
+        </div>
+      </div>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section" id="footer">
+      <h2 class="sr-only">Footer</h2>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>
+      let hidden = document.querySelector(".nav__link-nb");
+      hidden.setAttribute("aria-hidden", "true");
+      
+      $(document).ready(function(){
+        $('.tab').on('click', function(){
+          var id = $(this).index()
+          $(this).addClass('active-tab').siblings().removeClass('active-tab')
+          $(this).attr({
+            'aria-selected': 'true',
+            tabindex: '0'
+          }).siblings().attr({
+            'aria-selected': 'false',
+            tabindex: '-1'
+          })
+          $(this).parent().siblings('picture:eq('+id+')').addClass('active').siblings('picture').removeClass('active')
+          $(this).parent().next().find('.tech__panel:eq('+id+')').addClass('active-panel').siblings().removeClass('active-panel')
+        })
+        .on('keydown', function(e){
+          var curr = $(e.target)
+          if(e.code === 'ArrowLeft'){
+            if(curr.prev().length){
+              curr.prev().click().focus()
+            } else {
+              curr.siblings(':last-child').click().focus()
+            }
+          } else if(e.code === 'ArrowRight'){
+            if(curr.next().length){
+              curr.next().click().focus()
+            } else {
+              curr.siblings(':first-child').click().focus()
+            }
+          }
+        })
+
+        // menu open/close 
+        $('.header__menu-open').on('click', function(){
+          $(this).attr('aria-hidden', 'true').siblings(':not(nav)').attr('aria-hidden', 'true').parent().siblings('main, footer').attr('aria-hidden', 'true')
+          $(this).next('nav').addClass('open').find('.header__menu-close').focus()
+        })
+        $('.header__menu-close').on('click', function(){
+          $(this).parent().siblings().removeAttr('aria-hidden').parent().siblings('main, footer').removeAttr('aria-hidden')
+          $(this).parent().removeClass('open').find('.header__menu-open').focus()
+        })
+      })
+    </script>
+  </body>
+</html>
