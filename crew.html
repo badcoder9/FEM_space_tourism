@@ -227,7 +227,7 @@
         })
         $('.header__menu-close').on('click', function(){
           $(this).parent().siblings().removeAttr('aria-hidden').parent().siblings('main, footer').removeAttr('aria-hidden')
-          $(this).parent().removeClass('open').find('.header__menu-open').focus()
+          $(this).parent().removeClass('open').siblings('.header__menu-open').focus()
         })
       })
       
