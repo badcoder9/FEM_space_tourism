@@ -16,7 +16,6 @@
         background-color: rgba($color: var.$light, $alpha: .2);
         width: auto;
         flex-grow: 1;
-        // right: -3rem;
         position: relative;
         z-index: 1;
         margin-left: 3.5rem;
@@ -33,7 +32,6 @@
         @include mix.flex;
         padding: 0 10.5rem 0 3rem;
         > li{
-            // margin-inline: 1.5rem;
             border-bottom: .25rem solid transparent;
             @include mix.flex;
             align-items: center;
@@ -73,6 +71,25 @@
         margin-right: .5rem;
     }
 }
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2rem);
+    text-align: center;
+    .attribution{
+        padding-block: 5px;
+        margin: auto;
+        color: var.$light;
+        a{
+            text-decoration: underline;
+            color: var.$light;
+        }
+    }
+}
+
 
 @include mix.tablet{
     .header{
@@ -155,5 +172,8 @@
         .nav__link-nb{
             display: block;
         }
+    }
+    .footer{
+        position: relative;
     }
 }
